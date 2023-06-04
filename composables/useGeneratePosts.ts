@@ -39,8 +39,10 @@ export default async function (posts: number): Promise<Post[]> {
     const date = new Date();
     date.setDate(date.getDate() - Math.floor(Math.random() * 3) - 1 - i * 5);
 
+    const currentDate = Date.now();
+
     newPosts.push({
-      id: i,
+      id: `${currentDate}-${i}`,
       photos,
       caption: quotes[i].content,
       user: {
