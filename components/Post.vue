@@ -1,6 +1,6 @@
 <script setup lang="ts">
 interface Post {
-  id: number;
+  id: string;
   photos: string[];
   caption: string;
   user: {

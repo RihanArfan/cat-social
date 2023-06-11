@@ -2,7 +2,7 @@ export {};
 
 declare global {
   interface Post {
-    id: number;
+    id: string;
     photos: string[];
     caption: string;
     user: {

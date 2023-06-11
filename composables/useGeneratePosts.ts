@@ -19,7 +19,7 @@ export default async function (posts: number): Promise<Post[]> {
   const quotesEndpoint = `https://api.quotable.io/quotes/random?limit=${posts}&maxLength=100`;
   const quotes = await $fetch<[{ content: string }]>(quotesEndpoint);
 
-  const newPosts = [];
+  const newPosts: Post[] = [];
 
   for (let i = 0; i < posts; i++) {
     const randomUser =
