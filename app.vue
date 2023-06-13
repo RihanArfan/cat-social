@@ -10,10 +10,18 @@ async function generatePosts() {
 
 generatePosts();
 
+// useInfiniteScroll needs a container with a fixed height
 const onScroll: IntersectionObserverCallback = async ([{ isIntersecting }]) => {
   if (!isIntersecting) return; // don't trigger again when data loads
   generatePosts();
 };
+
+// bg hue based on scroll position. if exceeds 360, it loops back to 0
+const { y } = useWindowScroll();
+const { height } = useWindowSize();
+
+const SPEED = 0.1; // slow colour change speed by 90%
+const hue = computed(() => ((y.value / height.value) * 360 * SPEED) % 360);
 </script>
 
 <template>
@@ -22,7 +30,10 @@ const onScroll: IntersectionObserverCallback = async ([{ isIntersecting }]) => {
     <Link rel="icon" type="image/png" href="/kesh.png" />
   </Head>
 
-  <Body class="overscroll-x-none" />
+  <Body
+    class="overscroll-x-none"
+    :style="`background: hsl(${hue} 100% 85%);`"
+  />
 
   <UContainer
     :ui="{ constrained: 'max-w-lg' }"
