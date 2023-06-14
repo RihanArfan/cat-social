@@ -16,7 +16,15 @@ const timeAgo = useTimeAgo(props.posted_at);
 </script>
 
 <template>
-  <UCard :ui="{ body: { padding: '' }, footer: { padding: 'p-2' } }">
+  <UCard
+    :ui="{
+      background: 'bg-white/50 dark:bg-gray-900/50',
+      ring: '',
+      divider: '',
+      body: { padding: '' },
+      footer: { padding: 'p-2' },
+    }"
+  >
     <img
       :src="photos[0]"
       class="w-full"
