@@ -21,7 +21,12 @@ const { y } = useWindowScroll();
 const { height } = useWindowSize();
 
 const SPEED = 0.1; // slow colour change speed by 90%
-const hue = computed(() => ((y.value / height.value) * 360 * SPEED) % 360);
+const HUE_OFFSET = 180; // start at 180deg (teal)
+const hue = computed(() => {
+  const scroll = y.value / height.value;
+  const hue = scroll * 360 * SPEED + HUE_OFFSET;
+  return hue % 360;
+});
 </script>
 
 <template>
