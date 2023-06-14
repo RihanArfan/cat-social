@@ -1,7 +1,13 @@
 <template>
   <UCard
-    :ui="{ body: { padding: '' }, footer: { padding: 'p-2' } }"
-    class="w-full"
+    :ui="{
+      base: 'overflow-hidden w-full',
+      background: 'bg-white/50 dark:bg-gray-900/50',
+      ring: '',
+      divider: '',
+      body: { padding: '' },
+      footer: { padding: 'p-2' },
+    }"
   >
     <USkeleton class="pb-[100%]" />
 

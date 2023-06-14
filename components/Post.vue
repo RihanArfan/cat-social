@@ -18,6 +18,7 @@ const timeAgo = useTimeAgo(props.posted_at);
 <template>
   <UCard
     :ui="{
+      base: 'overflow-hidden w-full',
       background: 'bg-white/50 dark:bg-gray-900/50',
       ring: '',
       divider: '',
