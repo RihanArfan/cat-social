@@ -25,9 +25,9 @@ export default async function (posts: number): Promise<Post[]> {
     const randomUser =
       usernames.value[Math.floor(Math.random() * usernames.value.length)];
 
-    // 25% chance of having multiple photos
+    const CHANCE_OF_MULTIPLE_PHOTOS = 0.00; // 0.25 once <Post/> supports
     const photos =
-      Math.random() < 0.25
+      Math.random() < CHANCE_OF_MULTIPLE_PHOTOS
         ? [
             `https://cataas.com/cat?width=500&height=500&${i}`,
             `https://cataas.com/cat?width=500&height=500&${i + 1}`,
