@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     families: {
       Mansalva: true,
     },
+    subsets: "latin",
   },
 
   experimental: {
