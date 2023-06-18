@@ -16,17 +16,7 @@ const onScroll: IntersectionObserverCallback = async ([{ isIntersecting }]) => {
   generatePosts();
 };
 
-// bg hue based on scroll position. if exceeds 360, it loops back to 0
-const { y } = useWindowScroll();
-const { height } = useWindowSize();
-
-const SPEED = 0.1; // slow colour change speed by 90%
-const HUE_OFFSET = 180; // start at 180deg (teal)
-const hue = computed(() => {
-  const scroll = y.value / height.value;
-  const hue = scroll * 360 * SPEED + HUE_OFFSET;
-  return hue % 360;
-});
+const { hue } = useScrollColour();
 </script>
 
 <template>
