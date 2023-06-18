@@ -26,7 +26,7 @@ const { hue } = useScrollColour();
   </Head>
 
   <Body
-    class="overscroll-x-none"
+    class="overscroll-x-none font-cursive"
     :style="`background: hsl(${hue} 100% 85%);`"
   />
 
